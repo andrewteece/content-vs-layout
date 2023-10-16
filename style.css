@@ -36,7 +36,7 @@ p {
 
 /* Utility Classes */
 
-.flow-content {
+.flow-content * + * {
     margin-top: var(--flow-space, var(--spacer));
 }
 
@@ -46,24 +46,28 @@ p {
     margin: 0 auto;
 }
 
-.flex-flow {
+.flex-split {
     display: flex;
     flex-direction: column;
 }
 
-.flex-flow > * + * {
+.flex-split > * + * {
     margin: calc(var(--spacer) * 3) 0 0 0;
 }
 
 @media (min-width: 40em) {
-    .flex-flow {
+    .flex-split {
         flex-direction: row;
-        justify-content: space-between;
     }
 
-    .flex-flow > * + * {
+    .flex-split > * + * {
         margin: 0 0 0 var(--spacer);
     }
+}
+
+.bg-dark {
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-primary-400);
 }
 
 /* General Styles */
@@ -80,6 +84,7 @@ h1,
 h2,
 h3 {
     font-weight: var(--fw-900);
+    line-height: 1.1;
 }
 
 h1 {
@@ -94,6 +99,12 @@ h3 {
     font-size: var(--fs-500);
 }
 
+/* General Layout */
+
+section {
+    padding: 10rem 0;
+}
+
 /* Components */
 
 .btn {
@@ -104,4 +115,9 @@ h3 {
     background: var(--clr-primary-400);
     color: var(--clr-neutral-100);
     padding: 0.5em 1.25em;
+}
+
+.card {
+    padding: var(--spacer);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .20);
 }
