@@ -60,6 +60,22 @@ p {
         flex-direction: row;
     }
 
+    .flex-split > * {
+        flex-basis: 100%;
+    }
+
+    .col-1 {
+        flex-basis: 25%;
+    }
+
+    .col-2 {
+        flex-basis: 50%;
+    }
+
+    .col-3 {
+        flex-basis: 75%;
+    }
+
     .flex-split > * + * {
         margin: 0 0 0 var(--spacer);
     }
@@ -115,9 +131,25 @@ section {
     background: var(--clr-primary-400);
     color: var(--clr-neutral-100);
     padding: 0.5em 1.25em;
+    border-radius: .8rem;
+}
+
+.btn:hover,
+.btn:focus {
+    color: var(--clr-primary-400);
+    outline: 3px solid var(--clr-primary-400);
+    background-color: var(--clr-neutral-100);
+    
+    transition: all 350ms ease-in-out;
 }
 
 .card {
+    align-self: flex-start;
     padding: var(--spacer);
     box-shadow: 0 0 1rem rgba(0, 0, 0, .20);
+}
+
+.section-one {
+    background-image: url(img/hero-bg.jpg);
+    background-size: cover;
 }
